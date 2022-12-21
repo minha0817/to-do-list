@@ -7,7 +7,6 @@ export default function Input({addItem}) {
   const handleSubmit = (event) => {
     event.preventDefault();
     addItem(input)
-    console.log(input);
     setInput("")
   }
 
