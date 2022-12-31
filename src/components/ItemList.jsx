@@ -1,40 +1,51 @@
-import React from 'react'
-import { BsTrashFill } from 'react-icons/bs'
+import React, { useState } from 'react'
+import Input from './Input'
+import Item from './Item'
+import './itemList.css'
 
-export const ItemList = ({ items, setItems, checkedState, setCheckedState }) => {
+export default function ItemList({ filter }) {
+  const [items, setItems] = useState([
+    { id: '123', input: 'get groceries', status: 'active' },
+    { id: '124', input: 'coding', status: 'active' },
+  ])
 
   const handleDelete = (index) => {
     items.splice(index, 1)
     setItems([...items])
   }
 
-  const handleCompleted = (position) => {
-    console.log("position", position)
-    const updatedCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    ) 
-    
-    setCheckedState(updatedCheckedState);
+  const handleUpdate = (updated) => {
+    setItems(items.map((item) => (item.id === updated.id ? updated : item)))
   }
 
+  const addItem = (input) => {
+    setItems([...items, input])
+  }
+
+  const getFilteredItems = (items, filter) => {
+    if (filter === 'all') {
+      return items
+    } else {
+      return items.filter((item) => item.status === filter)
+    }
+  }
+
+  const filtered = getFilteredItems(items, filter)
+
   return (
-    <div>
-      {items.length > 0 &&
-        items.map((item, index) => (
-          <div key={index}>
-            <label>
-              <input type="checkbox" checked={checkedState[index]} onChange={() => handleCompleted(index)}/>
-              <span>{item}</span>
-            </label>
-            <button
-              onClick={() => {
-                handleDelete(index)
-              }}
-            >
-              <BsTrashFill />
-            </button>
-          </div>
+    <section>
+      <ul>
+        {filtered.map((item, index) => (
+          <Item
+            key={item.id}
+            item={item}
+            handleUpdate={handleUpdate}
+            handleDelete={handleDelete}
+            index={index}
+          />
         ))}
-    </div>
+      </ul>
+      <Input addItem={addItem} items={items} setItems={setItems} />
+    </section>
   )
 }

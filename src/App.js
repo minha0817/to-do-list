@@ -1,23 +1,18 @@
-import React, { useState } from 'react';
-import './App.css';
-import Input from './components/Input';
-import {ItemList} from './components/ItemList';
+import React, { useState } from "react";
+import "./App.css";
+import "../src/components/Header/header.css"
+import ItemList from "./components/ItemList";
+import Header from "./components/Header/Header"
+const filters = ["all", "active", "completed"];
 
 function App() {
-  const [items, setItems] = useState([]);
-  const [checkedState, setCheckedState] = useState(
-    new Array(items.length).fill(false)
-  )
-  
-  const addItem = (input) => {
-    setItems([...items, input])
-  } 
+
+  const [filter, setFilter] = useState(filters[0]);
 
   return (
     <div className="App">
-      <h1>To do list</h1>
-      <ItemList items={items} setItems={setItems} checkedState={checkedState} setCheckedState={setCheckedState}/>
-      <Input addItem={addItem}/>
+      <Header filter={filter} setFilter={setFilter} filters={filters} />
+      <ItemList filter={filter}/>
     </div>
   );
 }

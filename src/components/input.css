@@ -1,0 +1,12 @@
+footer {
+  background-color: #534bae;
+  width: 400px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  position: fixed;
+  bottom: 168px;
+}

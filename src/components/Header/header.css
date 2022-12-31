@@ -1,0 +1,31 @@
+header {
+  background-color: #534bae;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+
+header ul {
+  position: relative;
+  float: right;
+  margin: 10px;
+
+}
+
+header ul button {
+  all: unset;
+  cursor: pointer;
+  color : orange;
+  margin-right: 15px;
+}
+
+header span {
+  position: relative;
+  float: left;
+  margin: 10px;
+  padding-left: 20px;
+}
