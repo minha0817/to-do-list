@@ -16,8 +16,9 @@ export default function Input({addItem}) {
   }
 
   return (
-    <footer className="input-box">
+    <form className="form">
       <input
+      className="input"
         name="Add todo"
         type={"text"}
         value={input}
@@ -25,8 +26,8 @@ export default function Input({addItem}) {
         onChange={(event)=> {setInput(event.target.value)}}
       >
       </input>
-      <button onClick={handleSubmit}>Add</button>
-    </footer>
+      <button className="form-button" onClick={handleSubmit}>Add</button>
+    </form>
   )
 }
 

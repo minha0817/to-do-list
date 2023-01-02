@@ -13,10 +13,16 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height:100vh;
+  border-radius: 25px;
+}
+
+
+
+* {
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-

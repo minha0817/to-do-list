@@ -1,12 +1,28 @@
-footer {
+.form {
   background-color: #534bae;
-  width: 400px;
-  height: 40px;
+  /* width: 400px;
+  height: 40px; */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  position: fixed;
-  bottom: 168px;
+}
+
+.input {
+  /* font-size: 1.4rem; */
+  padding: 0.3rem 0.8rem;
+  border: none;
+  outline: none;
+  flex: 1 auto;
+
+}
+
+.form-button {
+  all: unset;
+  padding: 0.25rem 0.8rem;
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  outline-style: none;
 }
