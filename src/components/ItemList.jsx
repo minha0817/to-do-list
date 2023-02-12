@@ -52,6 +52,6 @@ export default function ItemList({ filter }) {
 }
 
 function readItemsFromLocalStorage() {
-  const items = localStorage.getItem('items');
+  const items = localStorage.getItem('items')
   return items ? JSON.parse(items) : []
 }
