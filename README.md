@@ -1,6 +1,6 @@
 # To do list 
 
-Simple web page to create a to-do-list.
+A simple web page to create a to-do-list.
 
 
 ## 👀 Features 
